@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LookInnaBook</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <h1>InnaBookStore</h1>
+    {% block head %}{% endblock %}
+</head>
+<body>
+
+
+    {% block body %}{% endblock %}
+
+    <footer>
+        2022 - Carleton University
+    </footer>
+</body>
+
+</html>

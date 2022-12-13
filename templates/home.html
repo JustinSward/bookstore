@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+{% block body %}
+<div class="topnav">
+    <a class="active" href="/">Home</a>
+    <a href="/search">Search</a>
+    <a href="/cart">Cart</a>
+    <a href="/orders">Orders</a>
+    <a href="/account">Account</a>
+    <a href="/admin">Admin</a>
+</div>
+
+<h2>Log In</h2>
+
+<center>
+{% print('ASDFASDFASDF:') %}
+{% print(logged_in_HTML) %}
+{% if logged_in_HTML < 1 %}
+<form action="/" method="POST">
+    <input type="text" name="username" id="username" placeholder="User Email" style="width:10em" required>
+    <input type="password" name="password" id="password" placeholder="Password" style="width:10em" required>
+    <input type="submit" value="userlogin">
+</form>
+
+No account yet? <a href="/register"> Register here!</a>
+{% else %}
+Currently logged on as:    
+
+<a href="/logout">LOG OUT</a>
+{% endif %}
+</center>
+
+
+
+<hr width=75%>
+
+<h2>About Us</h2>
+
+<div class="instructionsdiv">
+<p style="text-align: left;">The InnaBookStore is created for the COMP3005 final project to experiment with using a database-backed user application.</p>
+
+<br>
+
+<p style="text-align: left;">The table below provides the contact information for the author of the web app.</p>
+
+<br>
+<table class="aboutustable">
+    <thead>
+        <th>Student</th>
+        <th>Contact</th>
+    </thead>
+    
+    <tr>
+        <td>Justin Sward</td>
+        <td><a href="mailto:justinsward@cmail.carleton.ca">justinsward@cmail.carleton.ca</a></td>
+    </tr>
+</table>
+
+<br><br><br>
+
+<center>
+<img src="/static/carletonlogo2.png"/>
+</center>
+
+</div>
+
+{% endblock %}

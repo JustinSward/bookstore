@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+{% block body %}
+<div class="topnav">
+    <a href="/">Home</a>
+    <a class="active" href="/search">Search</a>
+    <a href="/cart">Cart</a>
+    <a href="/orders">Orders</a>
+    <a href="/account">Account</a>
+    <a href="/admin">Admin</a>
+</div>
+
+<h2>Book Search</h2>
+
+
+
+
+
+
+
+<hr width=75%>
+
+<h2>Search Results</h2>
+
+<table style="width: 900px;">
+    <thead>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Publisher</th>
+        <th>Year</th>
+        <th>Pages</th>
+        <th>Price</th>
+        <th>Qty. Available</th>
+        <th>Qty. On Order</th>
+    </thead>
+{% for item in books %}
+    <tr>
+        <td>{{item[0]}}</td>
+        <td>{{item[1]}}</td>
+        <td>{{item[2]}}</td>
+        <td>{{item[3]}}</td>
+        <td>{{item[4]}}</td>
+        <td>{{item[5]}}</td>
+        <td>{{item[6]}}</td>
+        <td>{{item[7]}}</td>
+        <td>{{item[8]}}</td>
+    </tr>
+{% endfor %}
+</table>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
