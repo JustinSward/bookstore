@@ -14,28 +14,19 @@
 </div>
 
 <h2>Add User Account</h2>
+<hr>
 
 <center>
 
-<form action="/createnewuser" method="POST">
+
 <table>
-    <tr>
-        <td>
-            Account Type
-        </td>
-        <td>
-            <select name="u_accttype" id="u_accttype" style="width:10em">
-                <option value="0">User</option>
-                <option value="1">Administrator</option>
-            </select>
-        </td>
-    </tr>
+    <form action="/addnewuser" method="POST">
     <tr>
         <td>
             Password
         </td>
         <td>
-            <input type="text" name="Password" id="u_pw" placeholder="Password" style="width:10em" required>
+            <input type="text" name="pw" id="pw" placeholder="Password" style="width:10em" required>
         </td>
     </tr>
     <tr>
@@ -43,7 +34,7 @@
             First Name
         </td>
         <td>
-            <input type="text" name="FirstName" id="u_fname" placeholder="First Name" style="width:10em" required>
+            <input type="text" name="fname" id="fname" placeholder="First Name" style="width:10em" required>
         </td>
     </tr>
     <tr>
@@ -51,7 +42,7 @@
             Last Name
         </td>
         <td>
-            <input type="text" name="LastName" id="u_lname" placeholder="Last Name" style="width:10em" required>
+            <input type="text" name="lname" id="lname" placeholder="Last Name" style="width:10em" required>
         </td>
     </tr>
     <tr>
@@ -59,7 +50,7 @@
             Email Address
         </td>
         <td>
-            <input type="text" name="emailaddr" id="u_email" placeholder="Email Address" style="width:10em" required>
+            <input type="text" name="email" id="email" placeholder="Email Address" style="width:10em" required>
         </td>
     </tr>
     <tr>
@@ -67,7 +58,7 @@
             Telephone
         </td>
         <td>
-            <input type="text" name="telephone" id="u_telephone" placeholder="Telephone #" style="width:10em" required>
+            <input type="text" name="tel" id="tel" placeholder="Telephone #" style="width:10em" required>
         </td>
     </tr>
     <tr>
@@ -75,7 +66,7 @@
             Country
         </td>
         <td>
-            <input type="text" name="country" id="u_country" placeholder="Country" style="width:10em" required>
+            <input type="text" name="country" id="country" placeholder="Country" style="width:10em" required>
         </td>
     </tr>
     <tr>
@@ -83,9 +74,9 @@
             <input type="submit" value="Add User">
         </td>
     </tr>
-
-</table>
 </form>
+</table>
+
 
 
 </center>
