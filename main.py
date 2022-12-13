@@ -70,6 +70,31 @@ def about():
         
     return render_template('home.html', logged_in_HTML = logged_in)
 
+# Renders the Home web page
+@app.route('/addnewuser', methods=['POST', 'GET'])
+def addnewuser():
+    if request.method == 'POST':
+ #       newUser = ("pw","fname","lname","tel","email",False,"country")
+ #       newUser[0] = request.form['n_pw']
+ #       newUser[1] = request.form['n_fname']
+ #       newUser[2] = request.form['n_lname']
+ #       newUser[3] = request.form['n_tel']
+ #       newUser[4] = request.form['n_email']
+ #       newUser[5] = request.form['n_accttype']
+ #       newUser[6] = request.form['n_country']
+        c.execute("""INSERT INTO useraccounts (u_pw,u_fname,u_lname,u_telephone,u_email,u_accttype,u_country) VALUES
+                  (?,?,?,?,?,False,?)""",
+                  (request.form['pw'],
+                  request.form['fname'],
+                  request.form['lname'],
+                  request.form['tel'],
+                  request.form['email'],
+                  request.form['country']))
+        conn.commit()
+        
+    return render_template('useradded.html')
+
+
 # Logs the user out and returns home
 @app.route('/logout')
 def logout():
@@ -129,7 +154,7 @@ def viewusers():
 def viewcommissions():
     c.execute('SELECT * FROM commissions')
     commissions = c.fetchall()
-    return render_template('orders.html', commissions = commissions)
+    return render_template('viewcommissions.html', commissions = commissions)
 
 # Renders the View Publishers web page
 @app.route('/viewpublishers')
