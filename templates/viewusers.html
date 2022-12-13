@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+{% block body %}
+<div class="topnav">
+    <a href="/">Home</a>
+    <a href="/search">Search</a>
+    <a href="/cart">Cart</a>
+    <a href="/orders">Orders</a>
+    <a href="/account">Account</a>
+    <a class="active" href="/admin">Admin</a>
+</div>
+
+<h2>User Accounts</h2>
+
+<center>
+<h3><a href="/adduser"> ADD NEW USER</a></h3>
+<h3><a href="/adduser"> MODIFY EXISTING NEW USER</a></h3>
+</center>
+<br><br>
+
+<table style="width: 900px;">
+    <thead>
+        <th>User ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Telephone</th>
+        <th>Email Address</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State/Province</th>
+        <th>Postal/zip</th>
+        <th>Country</th>
+    </thead>
+{% for item in users %}
+    <tr>
+        <td>{{item[0]}}</td>
+        <td>{{item[2]}}</td>
+        <td>{{item[3]}}</td>
+        <td>{{item[4]}}</td>
+        <td>{{item[5]}}</td>
+        <td>{{item[7]}}</td>
+        <td>{{item[8]}}</td>
+        <td>{{item[9]}}</td>
+        <td>{{item[10]}}</td>
+        <td>{{item[11]}}</td>
+    </tr>
+{% endfor %}
+</table>
+
+
+
+
+{% endblock %}

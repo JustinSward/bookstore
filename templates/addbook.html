@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+{% block body %}
+<div class="topnav">
+    <a href="/">Home</a>
+    <a href="/search">Search</a>
+    <a href="/cart">Cart</a>
+    <a href="/orders">Orders</a>
+    <a href="/account">Account</a>
+    <a class="active" href="/admin">Admin</a>
+</div>
+
+<h2>Add Book</h2>
+
+<center>
+
+<form action="/createnewbook" method="POST">
+<table>
+    <tr>
+        <td>
+            ISBN
+        </td>
+        <td>
+            <input type="number" name="isbn" id="isbn" placeholder="ISBN" min="0" step="1" style="width:10em" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Title
+        </td>
+        <td>
+            <input type="text" name="title" id="title" placeholder="Title" style="width:10em" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Genre ID
+        </td>
+        <td>
+            <input type="number" name="genre_id" id="genre_id" placeholder="Genre ID" style="width:10em" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Publisher ID
+        </td>
+        <td>
+            <input type="number" name="publisher_id" id="publisher_id" placeholder="Publisher ID" min="0" step="1" style="width:10em" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Year
+        </td>
+        <td>
+            <input type="number" name="publishyear" id="publishyear" placeholder="Year" min="0" step="1" style="width:10em" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            # of Pages
+        </td>
+        <td>
+            <input type="number" name="numpages" id="numpages" placeholder="# of Pages" min="0" step="1" style="width:10em" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Price
+        </td>
+        <td>
+            <input type="number" name="currentprice" id="currentprice" placeholder="Price" min="0" style="width:10em" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Inventory Qty.
+        </td>
+        <td>
+            <input type="number" name="qtyavail" id="qtyavail" placeholder="Inventory" min="0" step="1" style="width:10em" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Qty. Ordered
+        </td>
+        <td>
+            <input type="number" name="qtyonorder" id="qtyonorder" placeholder="On-Order" min="0" step="1" style="width:10em" required>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="Add Book">
+        </td>
+    </tr>
+
+</table>
+</form>
+
+
+</center>
+
+
+{% endblock %}
