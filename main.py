@@ -170,6 +170,11 @@ def viewusers():
 def addbook():
     return render_template('addbook.html')
 
+# Renders the Modify User web page
+@app.route('/modifyuser')
+def modifyuser():
+    return render_template('modifyuser.html')
+
 # Renders the View Commissions web page
 @app.route('/viewcommissions')
 def viewcommissions():

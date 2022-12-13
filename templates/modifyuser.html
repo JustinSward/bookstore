@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+{% block body %}
+<div class="topnav">
+    <a href="/">Home</a>
+    <a href="/search">Search</a>
+    <a href="/cart">Cart</a>
+    <a href="/orders">Orders</a>
+    <a href="/account">Account</a>
+    <a class="active" href="/admin">Admin</a>
+</div>
+
+<h2>Modify User Account</h2>
+<hr>
+
+
+<center>
+<a href="/admin">BACK TO ADMINISTRATION</a>
+<hr>
+
+<form action="/modifyuser" method="POST">
+    <select name="att_to_mod" id="att_to_mod">
+        <option value="fname">First Name</option>
+        <option value="lname">Last Name</option>
+        <option value="telephone">Telephone</option>
+        <option value="email">Email</option>
+        <option value="street">Street</option>
+        <option value="city">City</option>
+        <option value="stateprov">State/Province</option>
+        <option value="postalzip">Postal/Zip Code</option>
+        <option value="country">Country</option>
+    </select>
+    <input type="text" name="newvalue" id="newvalue" placeholder="New Value" style="width:10em" required>
+    <input type="submit" value="Modify User Information">
+</form>
+
+
+
+
+</center>
+
+
+{% endblock %}
