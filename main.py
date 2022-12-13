@@ -45,7 +45,7 @@ class Cart_Item:
 
 # Removes all items from the shopping cart
 @app.route('/clear')
-def clearCist():
+def clearCart():
     Cart.cart_array.clear()
     Cart.num_cartitems = 0
     return redirect('/')
@@ -70,7 +70,7 @@ def about():
         
     return render_template('home.html', logged_in_HTML = logged_in)
 
-# Renders the Home web page
+# Adds new user to the SQLite database
 @app.route('/addnewuser', methods=['POST', 'GET'])
 def addnewuser():
     if request.method == 'POST':
@@ -94,6 +94,24 @@ def addnewuser():
         
     return render_template('useradded.html')
 
+# Adds book to the SQLite database
+@app.route('/createnewbook', methods=['POST', 'GET'])
+def createnewbook():
+    if request.method == 'POST':
+        c.execute("""INSERT INTO book (isbn,title,genre_id,publisher_id,publishyear,numpages,currentprice,qtyavail,qtyonorder)
+                  VALUES (?,?,?,?,?,?,?,?,?)""",
+                  (request.form['isbn'],
+                  request.form['title'],
+                  request.form['genre_id'],
+                  request.form['publisher_id'],
+                  request.form['publishyear'],
+                  request.form['numpages'],
+                  request.form['currentprice'],
+                  request.form['qtyavail'],
+                  request.form['qtyonorder']))
+        conn.commit()
+        
+    return render_template('bookadded.html')
 
 # Logs the user out and returns home
 @app.route('/logout')
@@ -147,7 +165,10 @@ def viewusers():
     users = c.fetchall()
     return render_template('viewusers.html', users = users)
 
-
+# Renders the Add New User web page
+@app.route('/addbook')
+def addbook():
+    return render_template('addbook.html')
 
 # Renders the View Commissions web page
 @app.route('/viewcommissions')
@@ -162,11 +183,6 @@ def viewpublishers():
     c.execute('SELECT * FROM publisher')
     commissions = c.fetchall()
     return render_template('viewcommissions.html', commissions = commissions)
-
-# Renders the Add New Book web page
-@app.route('/addbook')
-def addbook():
-    return render_template('addbook.html')
 
 # Renders the View Sales web page
 @app.route('/viewsales')
