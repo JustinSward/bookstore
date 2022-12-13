@@ -109,15 +109,15 @@ CREATE TABLE order_manifest (
     qty INTEGER NOT NULL
 );
 INSERT INTO order_manifest (order_id,isbn,pricepaid,qty) VALUES
-    (1,1,14.99,1),
-    (1,2,9.99,1),
-    (2,1,17.99,3);
+    (1,9780553211764,14.99,1),
+    (1,9780812978001,9.99,1),
+    (2,9780553250251,17.99,3);
 
 
 
 DROP TABLE IF EXISTS orders;
 CREATE TABLE orders (
-    order_id INTEGER,
+    order_id INTEGER PRIMARY KEY,
     u_id INTEGER,
     order_year INTEGER NOT NULL,
     order_month INTEGER NOT NULL,
@@ -158,7 +158,7 @@ CREATE TABLE useraccounts (
     u_pw TEXT NOT NULL,
     u_fname TEXT NOT NULL,
     u_lname TEXT NOT NULL,
-    u_telephone INTEGER NOT NULL,
+    u_telephone TEXT NOT NULL,
     u_email TEXT UNIQUE NOT NULL,
     u_accttype BOOL NOT NULL,
     u_street TEXT,

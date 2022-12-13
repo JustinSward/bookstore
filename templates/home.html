@@ -17,7 +17,7 @@
 <hr>
 
 <center>
-{% print('ASDFASDFASDF:') %}
+{% print('Current User:') %}
 {% print(logged_in_HTML) %}
 {% if logged_in_HTML < 1 %}
 <form action="/" method="POST">
@@ -26,7 +26,7 @@
     <input type="submit" value="userlogin">
 </form>
 
-No account yet? <a href="/register"> Register here!</a>
+No account yet? <a href="/adduser"> Register here!</a>
 {% else %}
 Currently logged on as:    
 
